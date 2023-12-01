@@ -1,6 +1,8 @@
 import { Component, OnDestroy, OnInit } from '@angular/core';
 import { ShopService } from './shop.service';
 import { Subscription } from 'rxjs';
+import { IProduct } from '../shared/models/Iproduct';
+import { IPagination } from '../shared/models/pagination';
 
 @Component({
   selector: 'app-shop',
@@ -8,6 +10,8 @@ import { Subscription } from 'rxjs';
   styleUrls: ['./shop.component.scss']
 })
 export class ShopComponent implements OnInit, OnDestroy {
+
+  public data : IPagination<IProduct>;
 
   private sub$ = new Subscription();
   constructor(private shopService: ShopService) { }
@@ -21,7 +25,7 @@ export class ShopComponent implements OnInit, OnDestroy {
 
   private getProducts(){
     const sub$ = this.shopService.getProducts().subscribe(res=>{
-      console.log(res);
+      this.data = res;
      });
      this.sub$.add(sub$);
   }

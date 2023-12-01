@@ -16,4 +16,10 @@ export class ShopService {
   getProducts() : Observable<IPagination<IProduct>>{
    return this.http.get<IPagination<IProduct>>(this.backendUrl+'/products');
   }
+  getbrands(){
+
+  }
+  getTypes(){
+    
+  }
 }

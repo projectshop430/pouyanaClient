@@ -1,6 +1,10 @@
 import { HttpClient } from '@angular/common/http';
 import { Component, OnInit } from '@angular/core';
 import { environment } from 'src/environments/environment';
+import { IProduct } from './shared/models/Iproduct';
+import { IPagination } from './shared/models/pagination';
+import { ShopService } from './shop/shop.service';
+
 
 @Component({
   selector: 'app-root',
@@ -8,13 +12,13 @@ import { environment } from 'src/environments/environment';
   styleUrls: ['./app.component.scss']
 })
 export class AppComponent implements OnInit {
-  private backendUrl = environment.backendUrl;
-  constructor(private http:HttpClient){}
+
+  constructor(){
+
+  }
   
   ngOnInit(): void {
-    this.http.get<any>(this.backendUrl+'/products').subscribe(res=>{
-      console.log(res);
-    });
+   
   }
   title = 'pouyanaClient';
 }

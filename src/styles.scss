@@ -51,12 +51,12 @@ body {
   line-height: 1.5;
   direction: rtl;
 }
-// // angular material theme
-// @import '@angular/material/prebuilt-themes/indigo-pink.css';
-// //toast message
-// @import 'ngx-toastr/toastr.css';
-// //spinner
-// @import 'ngx-spinner/animations/square-jelly-box.css';
+// angular material theme
+@import '@angular/material/prebuilt-themes/indigo-pink.css';
+//toast message
+@import 'ngx-toastr/toastr.css';
+//spinner
+@import 'ngx-spinner/animations/square-jelly-box.css';
 .spinner-text {
   font-size: 1.3rem;
   color: white;
@@ -123,3 +123,6 @@ h6 {
   padding: 0 4px;
 }
 
+
+html, body { height: 100%; }
+body { margin: 0; font-family: Roboto, "Helvetica Neue", sans-serif; }

@@ -1,13 +1,17 @@
 <mat-sidenav-container>
-<mat-sidenav >
-  <p>site</p>
+  <!-- sidbar -->
+<mat-sidenav [opened]="sideNavOpen" [mode]="sideNavOpen ? 'side' : 'over'" class="mat-sidenav">
+  <app-shop-filters></app-shop-filters>
 </mat-sidenav>
-<mat-sidenav-content>
-  <p>content</p>
+<!-- content -->
+<mat-sidenav-content class="mat-content">
+  <div class="row w-100">
+    <div class="col-12 col-sm-6 col-mb-4 col-lg-3 col-xl-2 " *ngFor="let item of data?.result">
+      <app-card-shop [product]="item"></app-card-shop>
+    </div>
+  </div>
 </mat-sidenav-content>
 </mat-sidenav-container>
 
-
-      <div class="row row-cols-1 row-cols-sm-3 row-cols-md-4 g-3">
-        <app-card-shop *ngFor="let item of data?.result" [product]="item"></app-card-shop>
-      </div>
+    
+      
